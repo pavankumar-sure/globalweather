@@ -1,0 +1,51 @@
+#%RAML 1.0
+title: Sample API
+version: 1.0
+
+/cities:
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              [{"Country": "Australia", "City":"Melboune"}, {"Country": "Australia", "City":"Sydney"}]
+  post:
+    body:
+      application/json:
+         example: |
+              [{"Country": "Australia", "City":"Melboune"}, {"Country": "Australia", "City":"Sydney"}]
+    responses:
+         202:
+          body:
+            application/json:
+              example: |
+                ["message": "No City found for a given Country"]
+
+/weather:
+  get:
+    queryParameters: 
+      city: 
+        displayName: city
+        description: City Name
+        example: Brisbane
+        required: true
+        type: string
+    responses: 
+      200:
+        body: 
+          application/json: 
+            example:  |  
+               [{"Country": "Australia", "City":"Melboune"}, {"Country": "Australia", "City":"Sydney"}]
+               
+
+/cities/weather/{city}:
+  post:
+    responses: 
+      200:
+        body: 
+          application/json: 
+            example:  |  
+               [{"Country": "Australia", "City":"Melboune1"}, {"Country": "Australia", "City":"Sydney1"}]
+              
+        

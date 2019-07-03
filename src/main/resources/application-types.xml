@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
+  <types:catalog>
+    <types:type name="XML" format="xml">
+      <types:example format="xml" element="NewDataSet" location="GetCitiesByCountry.xml"/>
+    </types:type>
+    <types:type name="WeatherXML" format="java">
+      <types:shape format="raml"><![CDATA[#%RAML 1.0 DataType
+type: string]]></types:shape>
+    </types:type>
+    <types:type name="input" format="java">
+      <types:shape format="raml"><![CDATA[#%RAML 1.0 DataType
+type: string]]></types:shape>
+    </types:type>
+  </types:catalog>
+  <types:enrichment select="#a31e47fc-7bfa-4120-8fe6-207b304dab74">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="XML"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#0d382b0d-457a-4343-bf82-2efae199876f">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="XML"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#6bb63d31-47ef-4939-8750-8c83730fbe85">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="XML"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#6d8ba964-40f4-4c6c-924f-e26fb70ad73d">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="XML"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+</types:mule>
